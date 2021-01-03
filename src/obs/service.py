@@ -4,8 +4,6 @@ from datetime import timedelta
 from obswebsocket import requests, events, obsws
 from oscpy.server import OSCThreadServer
 
-from osc.server import get_osc_server, start_osc_server
-
 
 class OBSRemote:
 

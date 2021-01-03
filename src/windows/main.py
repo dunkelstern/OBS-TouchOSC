@@ -17,7 +17,6 @@ from PySide2.QtGui import (
     QIcon, QIntValidator
 )
 
-from osc.server import get_osc_server, start_osc_server
 from obs.service import OBSRemote
 from utils.resource_path import resource_path
 
