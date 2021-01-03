@@ -3,6 +3,8 @@
 This is meant to be a bridge from OBS Websocket interface to the TouchOSC Apps running on
 smartphones.
 
+<img src="docs/ipad.jpeg" width="300">
+
 ### Installation
 
 1. Download the Installer from the [Release Page](https://github.com/dunkelstern/OBS-TouchOSC/releases/)
