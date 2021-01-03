@@ -1,7 +1,8 @@
 import sys
 
 from PySide2.QtCore import (
-    QSettings
+    QSettings,
+    QTimer
 )
 from PySide2.QtWidgets import (
     QWidget,
@@ -28,6 +29,10 @@ class MainWindow(QWidget):
 
         self.appctx = appctx
         self.obs = None
+        self.tick_timer = QTimer()
+        self.tick_timer.setInterval(200)
+        self.tick_timer.timeout.connect(self.tick)
+        self.tick_timer.start()
 
         company = 'dunkelstern' if sys.platform != 'darwin' else 'de.dunkelstern'
         self.settings = QSettings(company, 'OBSTouchOSC')
@@ -176,3 +181,7 @@ class MainWindow(QWidget):
             password=self.auth_password.text()
         )
         self.obs.start()
+
+    def tick(self):
+        if self.obs:
+            self.obs.tick()
